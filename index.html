@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  />
+
+  <meta
+    name="theme-color"
+    content="#0b1730"
+  />
+
+  <title>SANTALK 화용언어 어드벤처</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- ================================= -->
+    <!-- 상단 제목 -->
+    <!-- ================================= -->
+
+    <header class="topbar">
+
+      <div class="title-area">
+
+        <p class="eyebrow">
+          SANTALK PRAGMATIC ADVENTURE
+        </p>
+
+        <h1 id="mainTitle">
+          창원중앙역 화용언어 관제센터
+        </h1>
+
+      </div>
+
+
+      <div class="scoreboard">
+
+        <div class="scorebox">
+          <span>해결</span>
+          <strong id="score">0</strong>
+        </div>
+
+        <div class="scorebox">
+          <span>연속</span>
+          <strong id="streak">0</strong>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ================================= -->
+    <!-- 장소 탭 -->
+    <!-- ================================= -->
+
+    <nav class="place-tabs">
+
+      <button
+        class="place-tab active"
+        data-place="station"
+        type="button"
+      >
+        🚆 기차역
+      </button>
+
+      <button
+        class="place-tab"
+        data-place="school"
+        type="button"
+      >
+        🏫 학교
+      </button>
+
+      <button
+        class="place-tab"
+        data-place="hotel"
+        type="button"
+      >
+        🏨 호텔
+      </button>
+
+    </nav>
+
+
+    <!-- ================================= -->
+    <!-- 기차역 배경 -->
+    <!-- ================================= -->
+
+    <section
+      id="stationScene"
+      class="scene rail-scene"
+    >
+
+      <div class="sky">
+
+        <div class="cloud cloud1"></div>
+
+        <div class="cloud cloud2"></div>
+
+      </div>
+
+
+      <div class="station">
+
+        <div class="station-sign">
+          창원중앙역
+        </div>
+
+        <div class="station-building">
+
+          <div class="window-row">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="station-door"></div>
+
+        </div>
+
+      </div>
+
+
+      <div class="signal signal-left">
+
+        <div class="signal-head">
+
+          <span class="light red"></span>
+
+          <span class="light yellow"></span>
+
+          <span class="light green active"></span>
+
+        </div>
+
+      </div>
+
+
+      <div class="signal signal-right">
+
+        <div class="signal-head">
+
+          <span class="light red"></span>
+
+          <span class="light yellow active"></span>
+
+          <span class="light green"></span>
+
+        </div>
+
+      </div>
+
+
+      <!-- 위쪽 선로 -->
+
+      <div class="track track-upper">
+
+        <div
+          id="mugunghwa"
+          class="train mugunghwa train-left"
+        >
+
+          <div class="engine">
+
+            <div class="train-window"></div>
+
+            <div class="train-front-light"></div>
+
+            <div class="train-name">
+              무궁화호
+            </div>
+
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+
+        <div
+          id="ktx"
+          class="train ktx train-right reverse-train"
+        >
+
+          <div class="engine">
+
+            <div class="train-window"></div>
+
+            <div class="train-front-light"></div>
+
+            <div class="train-name">
+              KTX-산천
+            </div>
+
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 아래쪽 선로 -->
+
+      <div class="track track-lower">
+
+        <div
+          id="hemu"
+          class="train hemu train-left"
+        >
+
+          <div class="engine">
+
+            <div class="train-window"></div>
+
+            <div class="train-front-light"></div>
+
+            <div class="train-name">
+              HEMU
+            </div>
+
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+
+        <div
+          id="srt"
+          class="train srt train-right reverse-train"
+        >
+
+          <div class="engine">
+
+            <div class="train-window"></div>
+
+            <div class="train-front-light"></div>
+
+            <div class="train-name">
+              SRT
+            </div>
+
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="car">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="control-strip">
+
+        <span>🚦 신호</span>
+
+        <span>🚉 승강장</span>
+
+        <span>🛤️ 선로</span>
+
+        <span>🎙️ 관제</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- 학교 배경 -->
+    <!-- ================================= -->
+
+    <section
+      id="schoolScene"
+      class="scene school-scene hidden"
+    >
+
+      <div class="school-wall"></div>
+
+
+      <div class="blackboard">
+
+        <div class="board-title">
+          우리 반
+        </div>
+
+        <div class="board-text">
+          오늘도 친구의 말을 잘 듣고<br>
+          내 생각도 멋지게 말해요!
+        </div>
+
+      </div>
+
+
+      <div class="school-clock">
+        🕘
+      </div>
+
+
+      <div class="teacher-desk">
+
+        <div class="desk-top"></div>
+
+        <div class="desk-leg leg-one"></div>
+
+        <div class="desk-leg leg-two"></div>
+
+      </div>
+
+
+      <div class="student-desk desk-a">
+        📚
+      </div>
+
+      <div class="student-desk desk-b">
+        ✏️
+      </div>
+
+      <div class="student-desk desk-c">
+        📖
+      </div>
+
+
+      <div class="school-window">
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+      </div>
+
+
+      <div class="school-character school-ajun">
+        👦
+        <span>아준이</span>
+      </div>
+
+      <div class="school-character school-friend">
+        👧
+        <span>친구</span>
+      </div>
+
+      <div class="school-character school-teacher">
+        👩‍🏫
+        <span>선생님</span>
+      </div>
+
+
+      <div class="scene-role-label">
+        🎒 오늘은 학생이 되어 학교 문제를 해결해요!
+      </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- 호텔 배경 -->
+    <!-- ================================= -->
+
+    <section
+      id="hotelScene"
+      class="scene hotel-scene hidden"
+    >
+
+      <div class="hotel-wall"></div>
+
+
+      <div class="hotel-logo">
+        ⭐ GRAND SANTALK HOTEL ⭐
+      </div>
+
+
+      <div class="hotel-elevator">
+
+        <div class="elevator-number">
+          8
+        </div>
+
+        <div class="elevator-door left-door"></div>
+
+        <div class="elevator-door right-door"></div>
+
+      </div>
+
+
+      <div class="hotel-front">
+
+        <div class="front-sign">
+          FRONT DESK
+        </div>
+
+        <div class="front-counter"></div>
+
+      </div>
+
+
+      <div class="hotel-bell">
+        🛎️
+      </div>
+
+
+      <div class="hotel-sofa">
+        <span>🛋️</span>
+      </div>
+
+
+      <div class="hotel-plant">
+        🪴
+      </div>
+
+
+      <div class="hotel-character hotel-manager">
+        👦
+        <span>아준 지배인</span>
+      </div>
+
+
+      <div class="hotel-character hotel-guest">
+        🧳
+        <span>손님</span>
+      </div>
+
+
+      <div class="scene-role-label hotel-role">
+        🏨 손님의 이야기를 듣고 최고의 지배인이 되어보세요!
+      </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- 문제 영역 -->
+    <!-- ================================= -->
+
+    <section class="game-panel">
+
+
+      <div class="mission-card">
+
+
+        <div class="mission-top">
+
+          <span
+            id="missionType"
+            class="mission-type"
+          >
+            상황 파악
+          </span>
+
+
+          <div class="mission-actions">
+
+            <span
+              id="roleBadge"
+              class="role-badge"
+            >
+              🚆 관제사
+            </span>
+
+            <button
+              id="soundBtn"
+              class="small-btn"
+              type="button"
+            >
+              🔊 읽기
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="character-bar">
+
+          <span class="character-label">
+            등장인물
+          </span>
+
+          <div
+            id="characterArea"
+            class="character-area"
+          >
+
+            <span class="character-chip">
+              👦 아준이
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="mission-title-row">
+
+          <div
+            class="mission-icon"
+            id="missionIcon"
+          >
+            🚆
+          </div>
+
+          <h2 id="missionTitle">
+            오늘의 임무
+          </h2>
+
+        </div>
+
+
+        <p id="missionText">
+          시작 버튼을 눌러 문제를 해결해 보세요!
+        </p>
+
+
+        <div
+          id="choiceArea"
+          class="choices"
+        ></div>
+
+
+        <div
+          id="feedback"
+          class="feedback hidden"
+        ></div>
+
+
+        <div
+          id="speechBox"
+          class="speech-box hidden"
+        >
+
+          <p class="speech-label">
+            🎙️ 직접 말해보기
+          </p>
+
+          <p
+            id="speechPrompt"
+            class="speech-prompt"
+          ></p>
+
+
+          <button
+            id="doneSpeakingBtn"
+            class="speak-done-btn"
+            type="button"
+          >
+            말해봤어요!
+          </button>
+
+        </div>
+
+
+        <div class="button-row">
+
+
+          <button
+            id="startBtn"
+            class="primary-btn"
+            type="button"
+          >
+            게임 시작
+          </button>
+
+
+          <button
+            id="nextBtn"
+            class="primary-btn hidden"
+            type="button"
+          >
+            다음 사건
+          </button>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ================================= -->
+      <!-- 오른쪽 미션 도움 -->
+      <!-- ================================= -->
+
+      <aside class="helper-card">
+
+        <h3 id="helperTitle">
+          관제사 작전
+        </h3>
+
+
+        <div class="helper-grid">
+
+          <div>
+            <strong>1</strong>
+            <span>상황 보기</span>
+          </div>
+
+          <div>
+            <strong>2</strong>
+            <span>마음 생각</span>
+          </div>
+
+          <div>
+            <strong>3</strong>
+            <span>행동 선택</span>
+          </div>
+
+          <div>
+            <strong>4</strong>
+            <span>직접 말하기</span>
+          </div>
+
+        </div>
+
+
+        <div class="badge-list">
+
+          <span>누구?</span>
+
+          <span>어디?</span>
+
+          <span>왜?</span>
+
+          <span>기분?</span>
+
+          <span>어떻게?</span>
+
+        </div>
+
+
+        <div
+          id="helperTip"
+          class="tip"
+        >
+          상대방의 표정과 상황을 보고 가장 좋은 행동을 골라보세요!
+        </div>
+
+      </aside>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================================= -->
+  <!-- 성공 팝업 -->
+  <!-- ================================= -->
+
+  <div
+    id="celebration"
+    class="celebration hidden"
+  >
+
+    <div class="celebration-card">
+
+      <div
+        id="celebrationEmoji"
+        class="big-emoji"
+      >
+        ⭐
+      </div>
+
+      <h2 id="celebrationTitle">
+        임무 성공!
+      </h2>
+
+      <p id="celebrationText">
+        아주 좋은 판단이었어요!
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
